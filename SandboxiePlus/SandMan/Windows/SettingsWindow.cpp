@@ -809,7 +809,7 @@ bool CSettingsWindow::eventFilter(QObject *source, QEvent *event)
 				int namePos = truncatedCert.indexOf("NAME:");
 				int datePos = truncatedCert.indexOf("DATE:");
 				if (namePos != -1 && datePos != -1 && datePos > namePos)
-					truncatedCert = truncatedCert.mid(0, namePos + 5) + " ...\n" + truncatedCert.mid(datePos);
+					truncatedCert = truncatedCert.mid(0, namePos + 5) + "NAME:\n" + truncatedCert.mid(datePos);
 				ui.txtCertificate->setPlainText(truncatedCert);
 			}
 		}
@@ -1393,7 +1393,7 @@ void CSettingsWindow::UpdateCert()
 		int namePos = truncatedCert.indexOf("NAME:");
 		int datePos = truncatedCert.indexOf("DATE:");
 		if (namePos != -1 && datePos != -1 && datePos > namePos)
-			truncatedCert = truncatedCert.mid(0, namePos + 5) + " ...\n" + truncatedCert.mid(datePos);
+			truncatedCert = truncatedCert.mid(0, namePos + 5) + "NAME:\n" + truncatedCert.mid(datePos);
 		ui.txtCertificate->setPlainText(truncatedCert);
 		//ui.lblSupport->setVisible(false);
 
